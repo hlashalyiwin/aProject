@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1> <%= dataTitle %></h1>
+    <table>
+      <thead>
+        <th>TitleTitle</th>
+        <th>ContentContent</th>
+        <th>AuthorAuthor</th>
+      </thead>
+      <tbody>
+      <%for( var i=0; i< post.length; i++){%>
+        <tr>
+          <td>
+            <a href="/posts/postdetail/<%= post[i]._id %>"> <%= post[i].title %></a>
+          </td>
+          <td> <%= post[i].content %> </td>
+          <td> <%= post[i].author %> </td>
+        </tr>
+      <% }%>
+      </tbody>
+
+    </table>
+  </body>
+</html>

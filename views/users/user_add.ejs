@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1><%= title %> </h1>
+    <form action="/users/useradd11" method="post" enctype="multipart/form-data">
+      <label for="name">User Name</label>
+      <input type="text" name="name"  id="name"><p>
+      <label for="email">User Email</label>
+      <input type="email" name="email" id="email"><p>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password"><p>
+      <label for="img">Image</label>
+      <input type="file" name="img" id="img"><p>
+      <input type="submit" name="submit" value="Submit">
+    </form>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Update</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1> User Update</h1>
+    <form action="/users/userUpdate" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<%= user._id %>">
+        <label for="name">User Name</label>
+        <input type="text" name="name" id="name" value="<%= user.name %>"><p>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" value="<%= user.email %>"><p>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" value="<%= user.password %>"><p>
+        <label for="img">Image</label>
+        <input type="file" name="img" id="img" value="<%= user.img %>"><p>
+        <input type="submit" name="submit" value="UPDATE">
+    </form>
+  </body>
+</html>

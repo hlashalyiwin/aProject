@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1> Sign In </h1>
+    <form action="/signin" method="post">
+      <label for="email">Admin Email</label>
+      <input type="email" name="email" id="email" value=""><p>
+      <label for="password">Admin Password</label>
+      <input type="password" name="password" id="password" value=""><p>
+
+      <input type="checkbox" name="rememberMe" id="rememberMe" value="">
+      <label for="rememberMe">Remember Me</label><p>
+      <input type="submit" name="" value="Signin">
+    </form>
+  </body>
+  <script src="/javascripts/jquery-3.4.1.js" charset="utf-8"></script>
+  <script src="/javascripts/js.cookie.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+ $(document).ready(function(){
+    $('#rememberMe').click(function(){
+      if($(this).is(":checked")){
+        Cookies.set('email', $('#email').val());
+        Cookies.set('password', $('#password').val());
+      }else if($(this).is(":not(:checked)")){
+        Cookies.remove('email');
+        Cookies.remove('password');
+      }
+    });
+    if(Cookies.get('email')){
+      $('#email').val(Cookies.get('email'));
+      $('#rememberMe').prop('checked', true);
+    }
+   if(Cookies.get('password')){
+      $('#password').val(Cookies.get('password'));
+      $('#rememberMe').prop('checked', true);
+    }
+  });
+</script>
+</html>
